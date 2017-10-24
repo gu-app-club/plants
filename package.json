@@ -1,0 +1,19 @@
+{
+  "name": "@react-mutate/plants",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gu-app-club/plants.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gu-app-club/plants/issues"
+  },
+  "homepage": "https://github.com/gu-app-club/plants#readme"
+}
