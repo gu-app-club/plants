@@ -15,10 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Define routes
 app.use("/", router)
 
-// Use a different port for tester so we can run both at once
-let port = (process.env.NODE_ENV == 'test') ? 3080 : 3000
+
+app.get("/",function(request, response){
+  response.send("I'm homepage");
+});
 
 // Start the server
-app.listen(port, function() {
+app.listen(3000, function() {
   console.log(`Server up..`)
 })
