@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gu-app-club/plants/issues"
   },
-  "homepage": "https://github.com/gu-app-club/plants#readme"
+  "homepage": "https://github.com/gu-app-club/plants#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }

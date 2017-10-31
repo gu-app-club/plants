@@ -36,6 +36,18 @@ git config --global push.default simple
 echo '-----> Configuring NPM'
 sudo chown -R $USER:$(id -gn $USER) /home/vagrant/.config
 
+echo '-----> Initialising MySQL database'
+# Re-enable blank password root logins, which are disabled by default in MySQL 5.7.
+sudo mysql -e 'ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY ""';
+mysql -u root -e 'DROP DATABASE IF EXISTS plants_testing'
+mysql -u root -e 'DROP DATABASE IF EXISTS plants_dev'
+mysql -u root -e 'CREATE DATABASE IF NOT EXISTS plants_testing'
+mysql -u root -e 'CREATE DATABASE IF NOT EXISTS plants_dev'
+
+mysql -u root plants_testing < ~/plants/sql/dbsetup.sql
+mysql -u root plants_dev < ~/plants/sql/dbsetup.sql
+
+
 echo '-----> Adding Super Important Doggo'
 cat << "EOF"
        __,-----._                       ,-. 
