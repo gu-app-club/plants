@@ -37,3 +37,5 @@ vagrant@vagrant:~/plants$ yarn run start
 If there are no warnings, you should be able to navigate to [localhost:3000](http://localhost:3000) and view the project.
 
 ## 🍃 Got everything setup? Nice job! Go check the [issues](https://github.com/gu-app-club/plants/issues) page to get started. 🍃
+
+![Plants and stuff](https://media.giphy.com/media/3o7TKIyZgIr2SMOyEo/giphy.gif) 
