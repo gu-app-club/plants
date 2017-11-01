@@ -36,6 +36,14 @@ vagrant@vagrant:~/plants$ yarn run start
 ```
 If there are no warnings, you should be able to navigate to [localhost:3000](http://localhost:3000) and view the project.
 
+
+## Pulling from the repository after previous uses:
+
+After running a version of plants on your machine, then pulling to get the latest update, you'll need to use this command to update the vagrant VM.
+``` bash
+vagrant provision
+```
+
 ## 🍃 Got everything setup? Nice job! Go check the [issues](https://github.com/gu-app-club/plants/issues) page to get started. 🍃
 
 <p align="center">
