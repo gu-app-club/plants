@@ -22,8 +22,8 @@ function SendMessage(to, body) {
     {
       url:
         "https://api.twilio.com/2010-04-01/Accounts/" +
-          ACCOUNT_SID +
-          "/Messages.json",
+        ACCOUNT_SID +
+        "/Messages.json",
       method: "POST",
       json: true,
       form: query,
