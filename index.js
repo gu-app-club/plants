@@ -1,6 +1,3 @@
-console.log("Helloooo")
-
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const router = require('./src/router.js')
@@ -22,5 +19,5 @@ app.get("/",function(request, response){
 
 // Start the server
 app.listen(3000, function() {
-  console.log(`Server up..`)
+  console.log(`> Listening on localhost:3000`)
 })
