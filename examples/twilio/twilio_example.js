@@ -1,4 +1,4 @@
-var request = require("request");
+const request = require("request");
 
 //GOTO https://www.twilio.com/console/sms/dashboard to fill in these consts 👇
 const ACCOUNT_SID = "{Account SID}";
@@ -11,7 +11,7 @@ const DOGE =
 
 function SendMessage(to, body) {
   //First we package our query into a nice javascript object
-  let query = {
+  const query = {
     To: to,
     From: ACCOUNT_NUMBER,
     Body: body
