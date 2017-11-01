@@ -7,8 +7,8 @@
 Vagrant.require_version ">= 1.9.0"
 
 Vagrant.configure("2") do |config|
-  config.vm.network "forwarded_port", guest: 4000, host: 4000, host_ip: "127.0.0.1"
-  config.vm.network "forwarded_port", guest: 4001, host: 4001, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1"
 
   if !Vagrant::Util::Platform.windows?
     # On platforms where NFS is used (ie all but Windows), we still have to use
