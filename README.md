@@ -8,7 +8,7 @@ If you have the dependencies for this project, pop open a terminal (`ctrl-alt-t`
 Download the project:
 ```bash
 git clone https://github.com/gu-app-club/plants.git
-cd portfolio
+cd plants
 ```
 Using Vagrant, build the development environment (this will not work if you don't have [Vagrant](https://www.vagrantup.com/docs/installation/) and [Virtual Box](https://www.virtualbox.org/wiki/Downloads) installed).
 
@@ -29,6 +29,12 @@ In the Vagrant environment move into the project folder. This is a shared direct
 cd plants
 ```
 ## 🌵 Running the webserver 🌵
+
+Soooo close!! 
+```bash
+vagrant@vagrant:/~plants$ yarn install
+```
+
 
 To run the webserver:
 ``` bash
