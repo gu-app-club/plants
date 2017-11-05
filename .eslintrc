@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-console": "off",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "max-nested-callbacks": ["error", 3],
+    "max-depth": ["error", 3],
+    "max-statements": ["error", 10],
+    "max-params": ["error", 5],
+    "max-lines": ["error", 400],
+    "block-scoped-var": "error",
+    "consistent-return": "error",
+    "no-return-await": "warn",
+    "no-useless-concat": "error",
+    "no-undefined": "error",
+    "no-nested-ternary": "error", // Oh hell na
+    "no-var": "warn",
+    "prefer-const": "warn"
+  }
+}
