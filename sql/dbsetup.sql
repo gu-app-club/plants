@@ -1,14 +1,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-DROP TABLE WaterEvent;
-DROP TABLE PlantOwnership;
-DROP TABLE Plant;
-DROP TABLE Location;
-DROP TABLE Users;
-
-
 /* Keeps track of each location on campus where a plant could be at */
 CREATE TABLE Location(
 	LocationID int NOT NULL AUTO_INCREMENT,
