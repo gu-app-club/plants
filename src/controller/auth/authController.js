@@ -1,5 +1,6 @@
-const login = require("./login.js");
-const signup = require("./signup.js");
+const login = require("./login");
+const signup = require("./signup");
+const database = require("./database");
 
 // Publicly exported functions
-module.exports = { login, signup };
+module.exports = { login, signup, database };
