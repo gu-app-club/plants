@@ -21,6 +21,7 @@ CREATE TABLE Plant (
   plantID int NOT NULL AUTO_INCREMENT,
   locationID int,
   plantName text,
+  waterFrequency int,
   status enum('Alive', 'Dead', 'Gone') default 'Alive',
   PRIMARY KEY(plantID),
   FOREIGN KEY(locationID) REFERENCES Location(locationID) ON DELETE CASCADE
@@ -64,10 +65,10 @@ INSERT INTO Location(Building,Area)
 INSERT INTO Location(Building,Area)
 	VALUES("PACCAR","Hallway by Tadrous's office");
 
-INSERT INTO Plant(locationID,plantName)
-	VALUES(1,"Fern");
-INSERT INTO Plant(locationID, plantName)
-	VALUES(2, "Botany");
+INSERT INTO Plant(locationID,plantName, waterFrequency)
+	VALUES(1,"Fern",7);
+INSERT INTO Plant(locationID, plantName,waterFrequency)
+	VALUES(2, "Botany",4);
 	
 INSERT INTO Users VALUES
 	(48755,"Maxwell Dulin","3605085170","User");
