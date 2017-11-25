@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "fmt": "./node_modules/.bin/prettier --write src/**/*.js examples/**/*.js"
-  },
+    "fmt": "./node_modules/.bin/prettier --write src/**/*.js examples/**/*.js",
+    "dev": "node index.js",
+    "build": "next build",
+    "start": "next start"
+
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gu-app-club/plants.git"
@@ -18,7 +21,10 @@
   },
   "homepage": "https://github.com/gu-app-club/plants#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "next": "^4.1.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
   },
   "devDependencies": {
     "prettier": "^1.7.4"

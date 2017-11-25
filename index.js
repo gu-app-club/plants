@@ -1,23 +1,22 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const router = require('./src/router.js')
+const server = require("./server");
 
-// Create app instance
-const app = express()
-
-// Apply Middleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-
-// Define routes
-app.use("/", router)
+const dev = process.env.NODE_ENV !== "production";
+const next = require("next");
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
 
-app.get("/",function(request, response){
-  response.send("I'm homepage");
+app.prepare().then(() => {
+  server.get("*", (req, res) => {
+    return handle(req, res);
+  });
+  /* eslint-disable no-console */
+  server.listen(3000, err => {
+    if (err) {
+      throw err;
+    }
+    console.log("> Server ready on http://localhost:3000");
+  });
 });
 
-// Start the server
-app.listen(3000, function() {
-  console.log(`> Listening on localhost:3000`)
-})
+module.exports = server;
