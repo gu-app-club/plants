@@ -67,14 +67,12 @@ async function checkUser(username){
     return false
   }
   return true
-}
-
-
+}	
+	
 //if the location does not exist, then insert the location into the location tables
 //param: building-- the building in which the plant is in
 //param: areas -- the room, hallway or anything else to further describe the plant
-async function addLocation(building, areas){
-  let connection = await SQLConnect();
+async function addLocation(connection,building, areas){
 	building = building.toLowerCase(); //makes it so that the location table isn't scattered
 	areas = areas.toLowerCase();
 	//prepared statement
@@ -82,9 +80,8 @@ async function addLocation(building, areas){
 
 	if(Object.keys(results).length == 0){ // checks for the location being in the database
 		 await connection.query("INSERT INTO Location(Building,Area) VALUES(?,?);",[building,areas]);
-	}
+  }
 	const [result] = await connection.query("SELECT locationID FROM Location WHERE building = ?  AND area = ?",[building,areas]);
-	//const [result] = await connection.query("Select * from Location");
 	return result;
 }
 
@@ -98,7 +95,6 @@ async function addPlant(building,areas,name,frequency,statusType){
 	let id = await addLocation(connection,building,areas);
 	var locationID = id[0];
 	const[result] = await connection.query("INSERT INTO Plant(locationID,plantName,waterFrequency,status) VALUES(?,?,?,?);",[locationID,name,frequency, statusType]);
-
 	return id;
 }
 
@@ -185,6 +181,7 @@ async function database(request, response) {
   addWateringEvent("jacknich",2,'2014-07-02 06');
   let fun = await getTimes();
   response.send(fun);
+  return; 
 }
 
 
