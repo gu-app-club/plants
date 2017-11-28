@@ -58,7 +58,7 @@ CREATE TABLE PlantOwnership(
 
 
 
-/* Insert test values t*/
+/* Insert test values*/
 INSERT INTO Location(Building,Area)
 	VALUES("Herak","Room 324");
 
