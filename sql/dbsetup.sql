@@ -29,7 +29,7 @@ CREATE TABLE Plant (
 
 /*The creditials of the user */
 CREATE TABLE Users(
-	userID int NOT NULL,
+	userID VARCHAR(15) NOT NULL,
 	name text NOT NULL,
 	phoneNumber char(10) NOT NULL,
 	role enum('User','Admin', 'Creator') default 'User',
@@ -40,7 +40,7 @@ CREATE TABLE Users(
 CREATE TABLE WaterEvent(
 	waterID int NOT NULL AUTO_INCREMENT,
 	plantID int NOT NULL,
-	userID int NOT NULL,
+	userID VARCHAR(15) NOT NULL,
 	timeWatered TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(waterID, plantID),
 	FOREIGN KEY(plantID) REFERENCES Plant(plantID) ON DELETE CASCADE,
@@ -49,7 +49,7 @@ CREATE TABLE WaterEvent(
 
 /*Relationship between a person and a plant */
 CREATE TABLE PlantOwnership(
-	userID int NOT NULL,
+	userID VARCHAR(15) NOT NULL,
 	plantID int NOT NULL,
 	PRIMARY KEY(userID, plantID),
 	FOREIGN KEY(userID) REFERENCES Users(userID),
